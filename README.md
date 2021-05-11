@@ -1,2 +1,2 @@
-# SwipeViewTest
-# Swipetest2
+# SwipeViewTest 2
+No tabs or navigationpage
