@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="SwipeViewTest.BenefitsBig"
+                          xmlns:common="clr-namespace:SwipeViewTest;assembly=SwipeViewTest"
+
+             BackgroundColor="white">
+
+
+
+    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="DarkBlue">#0d2c43</Color>
+            <Color x:Key="MainBlue">#00569d</Color>
+            <Color x:Key="Orange">#E49812</Color>
+            <Color x:Key="DarkOrange">#936517</Color>
+            <Color x:Key="Purple">#935fa2</Color>
+            <Color x:Key="DarkPurple">#4b3254</Color>
+            <Color x:Key="Burgundy">#862138</Color>
+            <Color x:Key="DarkBurgundy">#4f1423</Color>
+            <Color x:Key="Green">#306441</Color>
+            <Color x:Key="DarkGreen">#14281d</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <Grid BackgroundColor="white">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <ImageButton 
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                Grid.Row="0"
+                Grid.RowSpan="1"
+                Source="icon.PNG"
+                BackgroundColor="Transparent"
+                Scale="1.5"
+                TranslationY="10"
+                
+                    />
+
+
+
+            <Label 
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Grid.Row="0"
+            Margin="0,50,0,0"
+                TranslationY="60"
+            Text="Tillsammans är vi starka" TextColor="{StaticResource Purple}"/>
+            <Label
+                Grid.Column="0"
+                Grid.ColumnSpan="4"
+                Grid.Row="0"
+                HeightRequest="1"
+                BackgroundColor="LightGray"
+                Margin="0,53,0,53"
+                TranslationY="90"
+                />
+
+            <!-- 
+            <Image 
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Source="Linda.jpg"/>
+
+            <Label 
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Grid.Row="4"
+            Text="Linda startade butik under rådande pandemi" TextColor="black" FontSize="Medium"/>
+            <Label
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Grid.Row="4"
+                TranslationY="70"
+            Text="Vi träffar Linda Antonsson som hade modet att öppna en klädesbutik, Fashion OnFlow, mitt under pandemin." FontSize="Small" TextColor="black"/>
+            
+            
+            -->
+            <!--newsfeed-->
+            <ScrollView
+                Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Grid.Row="1"
+            Grid.RowSpan="5"
+            TranslationY="40">
+
+                <FlexLayout
+            Direction="Column"
+            JustifyContent="SpaceEvenly"
+            AlignItems="Center"
+            BackgroundColor="Transparent">
+
+
+
+
+
+                    <yummy:PancakeView WidthRequest="300" Shadow="{yummy:ShadowMarkup BlurRadius=30}" Margin="0,15,0,15">
+                        <ImageButton Source="benefit.png"/>
+                    </yummy:PancakeView>
+                    <yummy:PancakeView WidthRequest="300" Shadow="{yummy:ShadowMarkup BlurRadius=30}" Margin="0,15,0,15">
+                        <ImageButton Source="benefit.png"/>
+                    </yummy:PancakeView>
+                    <yummy:PancakeView WidthRequest="300" Shadow="{yummy:ShadowMarkup BlurRadius=30}" Margin="0,15,0,15">
+                        <ImageButton Source="benefit.png"/>
+                    </yummy:PancakeView>
+                    <yummy:PancakeView WidthRequest="300" Shadow="{yummy:ShadowMarkup BlurRadius=30}" Margin="0,15,0,15">
+                        <ImageButton Source="benefit.png"/>
+                    </yummy:PancakeView>
+                    <yummy:PancakeView WidthRequest="300" Shadow="{yummy:ShadowMarkup BlurRadius=30}" Margin="0,15,0,15">
+                        <ImageButton Source="benefit.png"/>
+                    </yummy:PancakeView>
+                    <yummy:PancakeView WidthRequest="300" Shadow="{yummy:ShadowMarkup BlurRadius=30}" Margin="0,15,0,15">
+                        <ImageButton Source="benefit.png"/>
+                    </yummy:PancakeView>
+                </FlexLayout>
+            </ScrollView>
+
+
+
+
+            <!--newsfeed-->
+
+
+            <!--beeIcon-->
+            <FlexLayout
+                Grid.Row="6" 
+                Grid.Column="1" 
+                Grid.ColumnSpan="2"
+                JustifyContent="Center"
+                AlignItems="Center"
+                Direction="Row"
+                TranslationY="-50"
+                BackgroundColor="Transparent"
+                >
+                <yummy:PancakeView 
+                    Border="{yummy:BorderMarkup Color=#01589F, Thickness=10}" 
+                    CornerRadius="50">
+                    <yummy:PancakeView 
+                    BackgroundColor="#01589F" 
+                    Border="{yummy:BorderMarkup Color=White, Thickness=15}" 
+                    CornerRadius="50">
+                        <ImageButton                  
+                        BackgroundColor="#01589F" 
+                        Margin="10,10,10,10" 
+                        Source="bee.png"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        CornerRadius="50" 
+                        Clicked="Button_Clicked"/>
+                    </yummy:PancakeView>
+                </yummy:PancakeView>
+            </FlexLayout>
+            <!--beeIcon-->
+
+            <!--bottom navbar-->
+
+            <Frame
+                 Grid.Row="6"
+                Grid.ColumnSpan="4"
+                BackgroundColor="{StaticResource MainBlue}"
+                Margin="0,30,0,0"
+                 
+               >
+                <FlexLayout
+                    Direction="row"
+                    JustifyContent="SpaceBetween">
+                    <Button 
+                        Text="Nyheter" 
+                        TextColor="White" 
+                        BackgroundColor="{StaticResource MainBlue}"
+                        Clicked="GoToNewsFeed"/>
+                    <Button 
+                        Text="Logga in" 
+                        TextColor="White" 
+                        BackgroundColor="{StaticResource MainBlue}"
+                        Clicked="GoToSignup"/>
+                </FlexLayout>
+            </Frame>
+            <!--bottom navbar-->
+
+        </Grid>
+
+        <!--slide up menu-->
+        <yummy:PancakeView 
+            BackgroundColor="{StaticResource MainBlue}" 
+            Border="{yummy:BorderMarkup Color=Black, Thickness=1}" 
+            VerticalOptions="EndAndExpand"  x:Name="MyDraggableView" 
+            CornerRadius="15,15,0,0" 
+            HorizontalOptions="FillAndExpand" 
+            HeightRequest="0">
+            <ScrollView>
+                <StackLayout>
+                    <!--Close Button-->
+                    <Grid >
+
+
+                        <BoxView 
+                              Grid.Row="3"
+                              HeightRequest="3"  Margin="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White" WidthRequest="90"/>
+                        <!--   
+                        <FlexLayout AlignContent="Center" JustifyContent="Center" >                            
+                        
+                        <yummy:PancakeView 
+                    Border="{yummy:BorderMarkup Color=#01589F, Thickness=10}" 
+                    CornerRadius="50">
+                            <yummy:PancakeView 
+                    BackgroundColor="#01589F" 
+                    Border="{yummy:BorderMarkup Color=White, Thickness=15}" 
+                    CornerRadius="50">
+                                <ImageButton                  
+                        BackgroundColor="#01589F" 
+                        Margin="10,10,10,10" 
+                        Source="bee.png"
+                        WidthRequest="80"
+                        HeightRequest="80"
+                        CornerRadius="50" 
+                        Clicked="Button_Clicked"/>
+                            </yummy:PancakeView>
+                        </yummy:PancakeView>
+                        </FlexLayout>
+                     -->
+                        <Grid.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        </Grid.GestureRecognizers>
+
+                    </Grid>
+                    <!--Close Button-->
+                    <!--Menu view-->
+                    <common:Menu x:Name="HomeView" IsVisible="true"/>
+                    <!--Menu view-->
+
+                </StackLayout>
+            </ScrollView>
+        </yummy:PancakeView>
+        <!--slide up menu-->
+
+    </Grid>
+</ContentPage>

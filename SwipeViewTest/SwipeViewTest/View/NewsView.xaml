@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="smaforetagarnaAPP.View.NewsView" 
+             xmlns:viewModel="clr-namespace:smaforetagarnaAPP.ViewModel"
+             >
+             
+    <ContentPage.BindingContext>
+        <viewModel:NewsViewModel></viewModel:NewsViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid>
+                <!--<Label Text="[ Nyheter ]"/>-->
+                <CollectionView ItemsSource="{Binding NewsPostsOC}" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <StackLayout Margin="10" Padding="15">
+                                <Image Source="{Binding Embedded.WpFeaturedmedia[0].MediaDetails.Sizes.Large.SourceUrl}" Aspect="AspectFit" />
+                                <Label TextType="Html" Text="{Binding Title.Rendered}" FontSize="Medium" TextColor="Black"/>
+                                <Label Text="{Binding Date}" FontSize="Small" TextColor="Gray"/>
+                                <Label TextType="Html" Text="{Binding Excerpt.Rendered}" FontSize="Small" TextColor="Black"/>
+                                <Label Text="{Binding Link}" FontSize="Small" TextColor="Gray">
+                                    <Label.GestureRecognizers  x:Name="LinkTappedCommand"  CommandParameter="{Binding Link}">
+                                        <TapGestureRecognizer  Tapped="ExternalLinkTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <!--<Label Text="{Binding Embedded.WpFeaturedmedia[0].MediaDetails.Sizes.Medium.SourceUrl}" FontSize="Small" TextColor="Gray"/>-->
+                            </StackLayout>
+                            
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

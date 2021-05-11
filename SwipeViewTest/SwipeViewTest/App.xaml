@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SwipeViewTest.App">
+    <Application.Resources>
+        <Color x:Key="DarkBlue">#0d2c43</Color>
+        <Color x:Key="MainBlue">#00569d</Color>
+        <Color x:Key="Orange">#E49812</Color>
+        <Color x:Key="DarkOrange">#936517</Color>
+        <Color x:Key="Purple">#935fa2</Color>
+        <Color x:Key="DarkPurple">#4b3254</Color>
+        <Color x:Key="Burgundy">#862138</Color>
+        <Color x:Key="DarkBurgundy">#4f1423</Color>
+        <Color x:Key="Green">#306441</Color>
+        <Color x:Key="DarkGreen">#14281d</Color>
+    </Application.Resources>
+    
+</Application>
