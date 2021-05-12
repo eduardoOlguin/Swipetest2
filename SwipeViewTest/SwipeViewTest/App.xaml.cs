@@ -1,4 +1,5 @@
 ﻿using System;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +16,16 @@ namespace SwipeViewTest
 
         }
 
+        private void GoToNewsFeed(object sender, EventArgs e)
+        {
+            return;
+            //Navigation.PopAsync();
+        }
+
+        private void GoToSignup(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new Login();
+        }
         protected override void OnStart()
         {
         }

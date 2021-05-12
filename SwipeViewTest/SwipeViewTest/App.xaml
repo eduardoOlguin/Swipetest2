@@ -1,8 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             
+                          xmlns:common="clr-namespace:SwipeViewTest;assembly=SwipeViewTest"
+                          xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+
+
              x:Class="SwipeViewTest.App">
     <Application.Resources>
+        <ResourceDictionary>
+            
         <Color x:Key="DarkBlue">#0d2c43</Color>
         <Color x:Key="MainBlue">#00569d</Color>
         <Color x:Key="Orange">#E49812</Color>
@@ -13,6 +20,47 @@
         <Color x:Key="DarkBurgundy">#4f1423</Color>
         <Color x:Key="Green">#306441</Color>
         <Color x:Key="DarkGreen">#14281d</Color>
+
+
+            <ControlTemplate x:Key="Footer">
+                <StackLayout>
+                    <ContentPresenter/>
+                    <AbsoluteLayout
+                >
+
+
+                    <Frame
+                 
+                BackgroundColor="{StaticResource MainBlue}"
+                Margin="0,0,0,0"
+                        HeightRequest="50"
+                        Padding="0,0,0,0"
+                 
+               >
+                        <FlexLayout
+                    Direction="row"
+                    JustifyContent="SpaceAround">
+                            <Button 
+                                
+                        Text="Nyheter" 
+                        TextColor="White" 
+                        BackgroundColor="{StaticResource MainBlue}"
+                        Clicked="GoToNewsFeed"/>
+                            <Button 
+                                FontSize="Small"
+                                
+                        Text="Logga in" 
+                        TextColor="White" 
+                        BackgroundColor="{StaticResource MainBlue}"
+                        Clicked="GoToSignup"/>
+                        </FlexLayout>
+                    </Frame>
+                    </AbsoluteLayout>
+                </StackLayout>
+            </ControlTemplate>
+
+        </ResourceDictionary>
     </Application.Resources>
+    
     
 </Application>

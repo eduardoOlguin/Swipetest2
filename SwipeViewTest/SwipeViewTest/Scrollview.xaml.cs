@@ -76,7 +76,7 @@ namespace SwipeViewTest
 
         private void GoToNewsFeed(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new Scrollview();
+            return;
             //Navigation.PopAsync();
         }
 

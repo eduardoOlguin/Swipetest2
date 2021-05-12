@@ -3,7 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:common="clr-namespace:SwipeViewTest;assembly=SwipeViewTest"
-             x:Class="SwipeViewTest.Scrollview">
+             x:Class="SwipeViewTest.Scrollview"
+             ControlTemplate="{StaticResource Footer}"
+             >
+
 
 
 
@@ -76,72 +79,72 @@
             >
                 
                     <!--<Label Text="[ Nyheter ]"/>-->
-                    <CollectionView ItemsSource="{Binding NewsPostsOC}" SelectionMode="None">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
+                <CollectionView ItemsSource="{Binding NewsPostsOC}" SelectionMode="None">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
 
-                                <StackLayout Margin="10" Padding="15">
-                                    <Image Source="{Binding Embedded.WpFeaturedmedia[0].MediaDetails.Sizes.Large.SourceUrl}" Aspect="AspectFit" />
-                                    <Label TextType="Html" Text="{Binding Title.Rendered}" FontSize="Medium" TextColor="Black"/>
-                                    <Label Text="{Binding Date}" FontSize="Small" TextColor="Gray"/>
-                                    <Label TextType="Html" Text="{Binding Excerpt.Rendered}" FontSize="Small" TextColor="Black"/>
-                                    <Label Text="{Binding Link}" FontSize="Small" TextColor="Gray">
-                                        <Label.GestureRecognizers  x:Name="LinkTappedCommand"  CommandParameter="{Binding Link}">
-                                            <TapGestureRecognizer  Tapped="ExternalLinkTapped" />
-                                        </Label.GestureRecognizers>
-                                    </Label>
-                                    <!--<Label Text="{Binding Embedded.WpFeaturedmedia[0].MediaDetails.Sizes.Medium.SourceUrl}" FontSize="Small" TextColor="Gray"/>-->
-                                </StackLayout>
+                            <StackLayout Margin="10" Padding="15">
+                                <Image Source="{Binding Embedded.WpFeaturedmedia[0].MediaDetails.Sizes.Large.SourceUrl}" Aspect="AspectFit" />
+                                <Label TextType="Html" Text="{Binding Title.Rendered}" FontSize="Medium" TextColor="Black"/>
+                                <Label Text="{Binding Date}" FontSize="Small" TextColor="Gray"/>
+                                <Label TextType="Html" Text="{Binding Excerpt.Rendered}" FontSize="Small" TextColor="Black"/>
+                                <Label Text="{Binding Link}" FontSize="Small" TextColor="Gray">
+                                    <Label.GestureRecognizers  x:Name="LinkTappedCommand"  CommandParameter="{Binding Link}">
+                                        <TapGestureRecognizer  Tapped="ExternalLinkTapped" />
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <!--<Label Text="{Binding Embedded.WpFeaturedmedia[0].MediaDetails.Sizes.Medium.SourceUrl}" FontSize="Small" TextColor="Gray"/>-->
+                            </StackLayout>
 
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
             </ScrollView>
 
 
 
             <!--newsfeed-->
-            
 
-         <!--beeIcon-->
-            <FlexLayout
+
+        <!--beeIcon-->
+        <FlexLayout
                 Grid.Row="6" 
                 Grid.Column="1" 
                 Grid.ColumnSpan="2"
                 JustifyContent="Center"
                 AlignItems="Center"
                 Direction="Row"
-                TranslationY="-50"
+                TranslationY="0"
+                
                 BackgroundColor="Transparent"
                 >
-                <yummy:PancakeView 
+            <yummy:PancakeView 
                     Border="{yummy:BorderMarkup Color=#01589F, Thickness=10}" 
                     CornerRadius="50">
                 <yummy:PancakeView 
-                    BackgroundColor="#01589F" 
+                    BackgroundColor="Transparent" 
                     Border="{yummy:BorderMarkup Color=White, Thickness=15}" 
                     CornerRadius="50">
-                        <ImageButton                  
-                        BackgroundColor="#01589F" 
+                    <ImageButton                  
+                        BackgroundColor="Transparent" 
                         Margin="10,10,10,10" 
                         Source="bee.png"
                         WidthRequest="80"
                         HeightRequest="80"
                         CornerRadius="50" 
-                        Clicked="Button_Clicked"/> 
-                        </yummy:PancakeView>
-                        </yummy:PancakeView>                
-            </FlexLayout>
+                        Clicked="Button_Clicked"/>
+                </yummy:PancakeView>
+            </yummy:PancakeView>
+        </FlexLayout>
         <!--beeIcon-->
 
-        <!--bottom navbar-->
-            <AbsoluteLayout
+        <!--bottom navbar
+        <AbsoluteLayout
                 Grid.Row="6"
                 Grid.ColumnSpan="4">
-                
-            
-             <Frame
+
+
+            <Frame
                  
                 BackgroundColor="{StaticResource MainBlue}"
                 Margin="0,30,0,0"
@@ -160,34 +163,34 @@
                         TextColor="White" 
                         BackgroundColor="{StaticResource MainBlue}"
                         Clicked="GoToSignup"/>
-                </FlexLayout> 
-                </Frame>
-            </AbsoluteLayout>
-            <!--bottom navbar-->
+                </FlexLayout>
+            </Frame>
+        </AbsoluteLayout>
+        bottom navbar-->
 
-        </Grid>
-        
-        
-        
-        
+    </Grid>
+
+
+
+
     <!--slide up menu-->
-        <yummy:PancakeView 
+    <yummy:PancakeView 
             BackgroundColor="{StaticResource MainBlue}" 
             Border="{yummy:BorderMarkup Color=Black, Thickness=1}" 
             VerticalOptions="EndAndExpand"  x:Name="MyDraggableView" 
             CornerRadius="15,15,0,0" 
             HorizontalOptions="FillAndExpand" 
             HeightRequest="0">
-            <ScrollView>
-                <StackLayout>
+        <ScrollView>
+            <StackLayout>
                 <!--Close Button-->
-                    <Grid >
-                        
-                        
-                        <BoxView 
+                <Grid >
+
+
+                    <BoxView 
                               Grid.Row="3"
                               HeightRequest="3"  Margin="0" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="White" WidthRequest="90"/>
-                      <!--   
+                    <!--   
                         <FlexLayout AlignContent="Center" JustifyContent="Center" >                            
                         
                         <yummy:PancakeView 
@@ -208,21 +211,20 @@
                             </yummy:PancakeView>
                         </yummy:PancakeView>
                         </FlexLayout>
-                     -->   
-                        <Grid.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                        </Grid.GestureRecognizers>
-                        
-                    </Grid>
-                 <!--Close Button-->   
-            <!--Menu view-->
-                    <common:Menu x:Name="HomeView" IsVisible="true"/>
-            <!--Menu view-->
+                     -->
+                    <Grid.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Grid.GestureRecognizers>
 
-                </StackLayout>
-            </ScrollView>
-        </yummy:PancakeView>
+                </Grid>
+                <!--Close Button-->
+                <!--Menu view-->
+                <common:Menu x:Name="HomeView" IsVisible="true"/>
+                <!--Menu view-->
+
+            </StackLayout>
+        </ScrollView>
+    </yummy:PancakeView>
     <!--slide up menu-->
-
     </Grid>
 </ContentPage>
